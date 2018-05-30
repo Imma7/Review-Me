@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block styles %}
+  {{super()}}
+  <!-- Importing simple mde css and js files  -->
+  {{simple.css}}
+  {{simple.js}}
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+  <p>Write a review about a place</p>
+  <form action method="post" class='form' role='form'>
+    <div class="row mt-3">
+      {{review_form.title.label}}
+    </div>
+    <div class="row">
+      {{review_form.hidden_tag()}} {{review_form.title(class_='form-control', placeholder="Enter title")}}
+    </div>
+    <div class="row mt-3">
+      {{review_form.body.label}}
+    </div>
+    <div class="row">
+      {{review_form.hidden_tag()}} {{review_form.body(class_='form-control', placeholder="Your review")}}
+      {{ simplemde.load }}
+    </div>
+    <div class="row mt-3">
+      {{review_form.author.label}}
+    </div>
+    <div class="row">
+      {{review_form.hidden_tag()}} {{review_form.author(class_='form-control', placeholder="Who is the reviewer")}}
+    </div>
+    <div class="row mt-3">
+      {{review_form.category.label}}
+    </div>
+    <div class="row form-check form-check-inline ">
+      {{review_form.hidden_tag()}} {{review_form.category(class_='form-check-input')}}
+    </div>
+    <div class="row">
+      {{review_form.submit(class_="btn btn-outline-primary")}}
+    </div>
+  </form>
+  {{ simplemde.load }}
+</div>
+{% endblock %}
