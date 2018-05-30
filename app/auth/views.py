@@ -1,7 +1,7 @@
 from flask import render_template,redirect,url_for,request,flash
 from . import auth
 from flask_login import login_user,logout_user,login_required
-# from ..models import User
+from ..models import User, Comments, Review
 from .forms import RegistrationForm, LoginForm
 from .. import db
 
@@ -35,7 +35,7 @@ def login():
 
         flash('invalid username or password')
 
-    title ="One Minute Pitch login"
+    title ="Welcome to the home of Reviews"
     return render_template('auth/login.html',login_form=login_form,title=title)
 
 #logout
