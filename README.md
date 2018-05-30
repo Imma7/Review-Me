@@ -72,7 +72,7 @@ Set the configuration in production mode
 + 
 
 ## Contributions
-
+[Immanuel Mugambi](https://github.com/Imma7) | [Michelle Claire](https://github.com/Monroe100) | [Jared Ahaza](https://github.com/JaredAhaza)
 
 ## License
-MIT License (c) 2018 [Immanuel Mugambi](https://github.com/Imma7)
+MIT License (c) 2018 [Immanuel Mugambi](https://github.com/Imma7) | [Michelle Claire](https://github.com/Monroe100) | [Jared Ahaza](https://github.com/JaredAhaza)

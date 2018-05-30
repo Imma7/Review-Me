@@ -3,7 +3,6 @@ from . import main
 from .forms import CommentForm, ReviewForm
 from ..models import Review, Comment, User
 from flask_login import login_required, current_user
-from .. import db, photos
 
 @main.route('/')
 def index():
@@ -85,28 +84,12 @@ def profile(uname):
     '''
     Function that renders profile of user
     '''
-    user = user.query.filter_by(username = uname).first()
+    user = User.query.filter_by(username = uname).first()
 
     if user is None:
         abort(404)
 
     return render_template('index.html', user=user)
-
-@main.route('/user/<uname>/update/pic', methods = ['GET', 'POST'])
-@login_required
-def update_pic(uname):
-    
-    user = User.query.filter_by(username=uname).first()
-
-    if 'photo' in request.files:
-        filename = photos.save(request.files['photo'])
-        path = f'photos/(filename)'
-        user.profile_pic_path = path
-
-        db.session.commit()
-
-    return redirect(url_for('main.profile', uname=uname))
-
 
 
 
