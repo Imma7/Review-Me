@@ -1,0 +1,23 @@
+
+  <!-- display Reviews -->
+  
+  {% macro displayReviews(Review_list) %} {% for review in review_list %}
+  <div id="contentinfo col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+    <ul style="list-style-type:square">
+      <li>
+  
+        <h3><a  class="text-grey" href="/review/{{review.id}}">{{reviews.content|truncate(250)}}</a><span><small>Posted at:{{pitches.date_posted.strftime('%Y/%m/%d %r')}}</small></span></h3>
+  
+      </li>
+      <hr>
+    </ul>
+  </div>
+  {% endfor %}{% endmacro %}
+  
+  
+  <!-- display specific pitch -->
+  {% macro displaySpecificReview(specific_review_list) %} {% for comment in specific_review_list %}
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+    <hr> {{comment.comment_section_id}}
+  </div>
+  {% endfor %}{% endmacro %}
