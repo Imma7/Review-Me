@@ -41,7 +41,7 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String)
     body = db.Column(db.String)
-    author = db.Column(db.String)
+    reviewer = db.Column(db.String)
     category = db.Column(db.String)
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     posted = db.Column(db.DateTime, default=datetime.utcnow)
@@ -62,10 +62,10 @@ class Review(db.Model):
 
     all_reviews = []
 
-    def __init__(self,title,body,author,category,user_id):
+    def __init__(self,title,body,reviewer,category,user_id):
         self.title = title
         self.body = body
-        self.author = author
+        self.reviewer = reviewer
         self.category = category
         self.user_id = user_id
 

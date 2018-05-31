@@ -55,7 +55,7 @@ def new():
         reviewer = review_form.reviewer.data
         category = review_form.category.data
 
-        new_review = Review(title = title, body = body, reviewer = reviewer, category = category, users = current_user)
+        new_review = Review(title = title, body = body, reviewer = reviewer, category = category, user_id= current_user.id)
         new_review.save_reviews()
 
         return redirect (url_for('main.index'))

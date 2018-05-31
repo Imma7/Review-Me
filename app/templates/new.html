@@ -25,10 +25,10 @@
       {{ simplemde.load }}
     </div>
     <div class="row mt-3">
-      {{review_form.author.label}}
+      {{review_form.reviewer.label}}
     </div>
     <div class="row">
-      {{review_form.hidden_tag()}} {{review_form.author(class_='form-control', placeholder="Who is the reviewer")}}
+      {{review_form.hidden_tag()}} {{review_form.reviewer(class_='form-control', placeholder="Who is the reviewer")}}
     </div>
     <div class="row mt-3">
       {{review_form.category.label}}
