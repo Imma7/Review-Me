@@ -9,7 +9,7 @@
 
 ## Features
 
-##Specifications
+## Specifications
 [Specifications File](https://github.com/Imma7/Review-Me/blob/master/specs.md)
 
 ## Setup
