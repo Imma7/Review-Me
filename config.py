@@ -10,7 +10,7 @@ class Config:
 
     SIMPLEMDE_JS_IIFE = True
     SIMPLE_USE_CDN = True
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jared:12345@localhost/review'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://immanuel:7007@localhost/reviewdb'
 
     @staticmethod
     def init_app(app):
@@ -22,7 +22,7 @@ class ProdConfig(Config):
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://jared:12345@localhost/review'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://immanuel:7007@localhost/reviewdb'
     DEBUG = True
 
 
